@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methods — The Organization Reunion (NHL) — The Mallory Group</title>
+  <link rel="stylesheet" href="tmg.css">
+</head>
+<body>
+
+  <!-- Swap this nav block for the exact nav from nhl-play-for-contract before publishing. -->
+  <nav class="tmg-nav">
+    <div class="tmg-nav-main">
+      <a class="tmg-nav-brand" href="https://rmallorybpc.github.io/">The Mallory Group</a>
+      <div class="tmg-nav-links">
+        <a href="index.html">Overview</a>
+        <a href="findings.html">Key findings</a>
+        <a href="methods.html" aria-current="page">Methods</a>
+        <a href="audit.html">Audit</a>
+      </div>
+    </div>
+    <div class="tmg-nav-tools">
+      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite &#9662;</button>
+      <div class="tmg-nav-dropdown" id="tmgToolsDropdown">
+        <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html">NHL Free Agency Research</a>
+        <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI">NFL Analysis</a>
+        <a href="https://rmallorybpc.github.io/nba-research-project/">NBA Supermax Research</a>
+        <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">NHL Play for Contract</a>
+        <a href="https://rmallorybpc.github.io/talent-portability-research/">Talent Portability Research</a>
+        <a href="https://rmallorybpc.github.io/external-hire-premium/">External Hire Premium</a>
+        <a href="https://rmallorybpc.github.io/nfl-coach-continuity/">NFL Coach Continuity</a>
+        <a href="https://rmallorybpc.github.io/recipes/">Recipe Book</a>
+        <a href="https://rmallorybpc.github.io/pdf-multi-agent-analysis/">PDF Multi-Agent Analysis</a>
+        <a href="https://content-integrity-audit.pages.dev/">Content Integrity</a>
+        <a href="https://rmallorybpc.github.io/housing-market-intel/">Housing Market Intel</a>
+        <a href="https://rmallorybpc.github.io/real-estate-report/">Real Estate Report</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tmg-page tmg-container">
+
+    <p class="tmg-eyebrow">Assumptions, data, and limits</p>
+    <h1 class="tmg-page-title">Methods</h1>
+    <p class="tmg-page-desc">How a return is detected, what is measured, and where the data comes from. This study reuses the play for contract pipeline and does not collect new data.</p>
+
+    <div class="tmg-bento-grid">
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">How a return is detected</p>
+        <p>Each signing sits in the play for contract panel with a retention status of same-team, new-team, or entry. The study starts from new-team signings only. For each one, the player's season-by-season team history is checked. A signing is a return if the signing team appears as a team the player played for in an earlier season, left, and then played elsewhere before signing back.</p>
+        <p>Same-team re-signings are excluded from the return group by design. They are the baseline, not the treatment. Entry-level signings are excluded as well.</p>
+        <p class="tmg-card-sub">Sources: return_events.csv and the play for contract analysis panel.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">What is measured</p>
+        <p>Two outcomes are co-primary. The first is the time-on-ice residual, expected versus actual minutes given pay, normalized to cap share. A positive value means the player was deployed above what the contract implied. This machinery is reused from the play for contract study, not rebuilt.</p>
+        <p>The second is the change in points per game after the signing. Time on ice is a deployment decision made by the team. Production is closer to what the player delivered. Reporting both is deliberate. The gap between them is the finding.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Model</p>
+        <p>Each outcome is compared two ways. A two-sample comparison of returners against other new-team signings, using a Welch t test and a Wilcoxon rank-sum test because the return group is small. Then a tier-controlled linear model regressing the outcome on a return indicator plus tier, position group, and age at signing.</p>
+        <p>The return coefficient is identified off 11 returns for time on ice and 9 for production, compared against the full new-team frame. The control terms are estimated on the whole frame. State the identification plainly: this is 11 returners set against hundreds of other new signings, adjusted for tier, position, and age.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Data sources, load-bearing</p>
+        <p>These are the sources this study depends on directly.</p>
+        <ul>
+          <li>Contracts and signings: community-hosted NHL contract data, <a href="https://github.com/Chief-Zach/Sports-Data">Chief-Zach Sports-Data</a>. The exact file is the NHL salaries JSONL in that repository.</li>
+          <li>Player performance and time on ice: the skater statistics file in the same <a href="https://github.com/Chief-Zach/Sports-Data">Chief-Zach Sports-Data</a> repository, with the NHL API accessed through the nhlscraper R package in the source pipeline.</li>
+        </ul>
+        <p class="tmg-card-sub">The contract window spans 2012 through 2025. Player season history is visible from 2009-2010 onward.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Data sources, inherited</p>
+        <p>The play for contract pipeline also draws on the sources below. This study inherits the pipeline but does not use these fields in its return analysis. They are listed for full provenance.</p>
+        <ul>
+          <li>Player bios and rosters: community-hosted roster CSVs used as a lookup in the source pipeline.</li>
+          <li>Team captaincy: Wikipedia list-of-captains pages, used under Creative Commons attribution. Not used in this study.</li>
+        </ul>
+        <p class="tmg-card-sub">Full pipeline detail is on the <a href="https://rmallorybpc.github.io/nhl-play-for-contract/methods.html">play for contract methods page</a>.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Limits</p>
+        <p>The sample is 15 free-agent returns. This is a small-sample, descriptive study.</p>
+        <p>Returns are detected from free-agent signings only. Trade-backs are excluded because the contract data source does not carry trades. The case that prompted the study, Connor Clifton's 2026 return to Boston, came partly through a trade and is not in the analyzed data.</p>
+        <p>Player season history begins at 2009-2010, so a small number of returns whose first stint began earlier may be truncated. Three of the fifteen returns touch that boundary.</p>
+        <p>The planned split by whether the general manager or head coach remained was not run. Fifteen returns cannot support a four-cell decomposition. It is documented as future work if the sample grows. The full reasoning is on the <a href="audit.html">audit page</a>.</p>
+      </div>
+
+    </div>
+
+    <footer class="tmg-footer">
+      <p>The Mallory Group. Part of the talent reunion series. NFL first, NHL second.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('tmgToolsBtn');
+      var dropdown = document.getElementById('tmgToolsDropdown');
+      if (btn && dropdown) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', function () {
+          dropdown.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
