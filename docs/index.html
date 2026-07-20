@@ -8,19 +8,20 @@
 </head>
 <body>
 
+  <!-- Swap this nav block for the exact nav from nhl-play-for-contract before publishing.
+       Page links below are correct for this study. Dropdown is the brand-guide list as-is. -->
   <nav class="tmg-nav">
     <div class="tmg-nav-main">
       <a class="tmg-nav-brand" href="https://rmallorybpc.github.io/">The Mallory Group</a>
       <div class="tmg-nav-links">
-        <a href="#finding">Finding</a>
-        <a href="#numbers">Numbers</a>
-        <a href="#context">Context</a>
-        <a href="#limits">Limits</a>
-        <a href="#method">Method</a>
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="findings.html">Key findings</a>
+        <a href="methods.html">Methods</a>
+        <a href="audit.html">Audit</a>
       </div>
     </div>
     <div class="tmg-nav-tools">
-      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite ▾</button>
+      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite &#9662;</button>
       <div class="tmg-nav-dropdown" id="tmgToolsDropdown">
         <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html">NHL Free Agency Research</a>
         <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI">NFL Analysis</a>
@@ -77,51 +78,53 @@
             <tr>
               <th scope="col">Group</th>
               <th scope="col">Time on ice residual (mean)</th>
-              <th scope="col">Reading</th>
+              <th scope="col">Source</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Same-team re-signings</td>
               <td>+0.32</td>
-              <td>Deployed above cost. The loyalty discount from the play-for-contract study.</td>
+              <td>Play for contract study, n = 1,115</td>
             </tr>
             <tr>
-              <td>Returners (this study)</td>
+              <td>Returners</td>
               <td>+0.84</td>
-              <td>Arrive as new signings, deployed above ordinary re-signings.</td>
+              <td>This study, 11 with a residual</td>
             </tr>
             <tr>
               <td>Other new-team signings</td>
-              <td>−0.48</td>
-              <td>Deployed below cost. The standard new-signing pattern.</td>
+              <td>&#8722;0.45</td>
+              <td>Play for contract study, n = 592</td>
             </tr>
           </tbody>
         </table>
-        <p class="tmg-card-sub">Residual is expected versus actual time on ice given pay, normalized to cap share. Positive means deployed above what the contract implied.</p>
+        <p class="tmg-card-sub">The same-team and other-new-team baselines are from the <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">play for contract study</a>. Returners arrive as new signings but are deployed above ordinary re-signings.</p>
       </div>
 
       <div class="tmg-card-wide" id="context">
         <p class="tmg-card-label">How this fits the prior work</p>
         <p>The finding sits against three reference points, each from a different source.</p>
-        <p>The play-for-contract study found same-team re-signings deliver a positive time-on-ice residual and new-team signings a negative one. Returners arrive as new signings but land above ordinary re-signings on deployment.</p>
-        <p>The NFL Coach Continuity study found on-field coaching familiarity produced no measurable effect on retained production. This study asks the contractual-familiarity version of that question. The answer rhymes. Familiarity moves how a player is used more than what he produces.</p>
+        <p>The <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">play for contract study</a> found same-team re-signings deliver a positive time-on-ice residual and new-team signings a negative one. Returners arrive as new signings but land above ordinary re-signings on deployment.</p>
+        <p>The <a href="https://rmallorybpc.github.io/nfl-coach-continuity/">NFL Coach Continuity study</a> found on-field coaching familiarity produced no measurable effect on retained production. This study asks the contractual-familiarity version of that question. The answer rhymes. Familiarity moves how a player is used more than what he produces.</p>
         <p>The management literature on boomerang employees finds no rehire performance premium and flatter growth over time. Two domains, the same shape.</p>
+      </div>
+
+      <div class="tmg-card-wide" id="data">
+        <p class="tmg-card-label">Data and sources</p>
+        <p>This study reuses the data pipeline from the <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">NHL Play for Contract</a> study. It does not collect new data.</p>
+        <p>Contracts and signings come from a community-hosted NHL contract dataset, <a href="https://github.com/Chief-Zach/Sports-Data">Chief-Zach Sports-Data</a>. Player performance and time on ice come from the same repository and the NHL API via the nhlscraper package. Full provenance is on the <a href="methods.html">methods page</a>.</p>
       </div>
 
       <div class="tmg-card-wide" id="limits">
         <p class="tmg-card-label">Scope and limits</p>
-        <p>This is a small-sample, descriptive study, and it is framed that way on purpose.</p>
-        <p>The sample is 15 free-agent returns from 2012 through 2025. The time-on-ice result rests on 11 of them. Two or three players could move it. Read it as direction, not proof.</p>
-        <p>Returns are detected from free-agent signings only. Trade-backs are excluded because the contract data source does not carry trades. The case that prompted this study, Connor Clifton's 2026 return to Boston, came partly through a trade and is not in the analyzed data.</p>
-        <p>The planned split by whether the general manager or head coach remained was not run. The return count is too small to support it. That decomposition is documented as a future extension if the sample grows.</p>
+        <p>This is a small-sample, descriptive study, and it is framed that way on purpose. The sample is 15 free-agent returns from 2012 through 2025. The time-on-ice result rests on 11 of them. Read it as direction, not proof.</p>
+        <p>Returns are detected from free-agent signings only. Trade-backs are excluded because the contract data source does not carry trades. The full stress-test is on the <a href="audit.html">audit page</a>.</p>
       </div>
 
       <div class="tmg-card-wide" id="method">
-        <p class="tmg-card-label">Method</p>
-        <p>The study compares returning players against all other new-team signings. A return is a free-agent signing with a team the player left in a prior season and returned to after playing elsewhere.</p>
-        <p>The outcomes are two. Time on ice residual measures deployment: expected versus actual minutes given pay. Points change measures production before and after the signing. The time-on-ice machinery is reused from the play-for-contract study in this suite.</p>
-        <p>Player stint history is visible from the 2009-2010 season onward. A small number of returns whose first stint began before then may be truncated.</p>
+        <p class="tmg-card-label">Method in brief</p>
+        <p>The study compares returning players against all other new-team signings. A return is a free-agent signing with a team the player left in an earlier season and returned to after playing elsewhere. Two outcomes are co-primary: time on ice residual for deployment, points change for production. The time-on-ice machinery is reused from the play for contract study. Full detail is on the <a href="methods.html">methods page</a>.</p>
       </div>
 
     </div>
