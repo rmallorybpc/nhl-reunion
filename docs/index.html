@@ -1,12 +1,152 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NHL Reunion Analysis</title>
-  </head>
-  <body>
-    <h1>NHL Reunion Analysis</h1>
-    <p>This site chapter will be written next.</p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Organization Reunion (NHL) — The Mallory Group</title>
+  <link rel="stylesheet" href="tmg.css">
+</head>
+<body>
+
+  <nav class="tmg-nav">
+    <div class="tmg-nav-main">
+      <a class="tmg-nav-brand" href="https://rmallorybpc.github.io/">The Mallory Group</a>
+      <div class="tmg-nav-links">
+        <a href="#finding">Finding</a>
+        <a href="#numbers">Numbers</a>
+        <a href="#context">Context</a>
+        <a href="#limits">Limits</a>
+        <a href="#method">Method</a>
+      </div>
+    </div>
+    <div class="tmg-nav-tools">
+      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite ▾</button>
+      <div class="tmg-nav-dropdown" id="tmgToolsDropdown">
+        <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html">NHL Free Agency Research</a>
+        <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI">NFL Analysis</a>
+        <a href="https://rmallorybpc.github.io/nba-research-project/">NBA Supermax Research</a>
+        <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">NHL Play for Contract</a>
+        <a href="https://rmallorybpc.github.io/talent-portability-research/">Talent Portability Research</a>
+        <a href="https://rmallorybpc.github.io/external-hire-premium/">External Hire Premium</a>
+        <a href="https://rmallorybpc.github.io/nfl-coach-continuity/">NFL Coach Continuity</a>
+        <a href="https://rmallorybpc.github.io/recipes/">Recipe Book</a>
+        <a href="https://rmallorybpc.github.io/pdf-multi-agent-analysis/">PDF Multi-Agent Analysis</a>
+        <a href="https://content-integrity-audit.pages.dev/">Content Integrity</a>
+        <a href="https://rmallorybpc.github.io/housing-market-intel/">Housing Market Intel</a>
+        <a href="https://rmallorybpc.github.io/real-estate-report/">Real Estate Report</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tmg-page tmg-container">
+
+    <p class="tmg-eyebrow">Series entry two of the talent reunion studies</p>
+    <h1 class="tmg-page-title">The organization reunion</h1>
+    <p class="tmg-page-desc">Do NHL players who return to a former team deliver more than other new signings? The bench and the scoresheet disagree.</p>
+
+    <div class="tmg-bento-grid">
+
+      <div class="tmg-card-wide" id="finding">
+        <p class="tmg-card-label">Headline</p>
+        <h2 class="tmg-card-title">Returning players receive re-signing-grade ice time. Their production does not match it.</h2>
+        <p>Some NHL free agents sign back with a team they used to play for. A team holds private information about a player it signed before. The question is whether that information shows up as value on the ice.</p>
+        <p>It shows up in deployment, not in production. Teams give returners more time on ice per cap dollar than they give other new signings. On the scoresheet, returners look like ordinary new signings. Familiarity is priced by the bench. It is not delivered on the ice.</p>
+      </div>
+
+      <div class="tmg-card" id="numbers">
+        <p class="tmg-card-label">Time on ice</p>
+        <p class="tmg-card-value">+1.75 min</p>
+        <p class="tmg-card-sub">Tier-controlled gap versus other new signings, per game. p = 0.02, measured on 11 returns with a residual. A signal, not a settled result.</p>
+      </div>
+
+      <div class="tmg-card">
+        <p class="tmg-card-label">Production</p>
+        <p class="tmg-card-value">Flat</p>
+        <p class="tmg-card-sub">Points change for returners is not distinguishable from other new signings. Descriptive only, 9 returns with a measurable value.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">The gap in one line</p>
+        <p>Returners are deployed like known quantities. They produce like new signings. The distance between those two facts is the finding.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">The comparison</p>
+        <table class="tmg-table">
+          <thead>
+            <tr>
+              <th scope="col">Group</th>
+              <th scope="col">Time on ice residual (mean)</th>
+              <th scope="col">Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Same-team re-signings</td>
+              <td>+0.32</td>
+              <td>Deployed above cost. The loyalty discount from the play-for-contract study.</td>
+            </tr>
+            <tr>
+              <td>Returners (this study)</td>
+              <td>+0.84</td>
+              <td>Arrive as new signings, deployed above ordinary re-signings.</td>
+            </tr>
+            <tr>
+              <td>Other new-team signings</td>
+              <td>−0.48</td>
+              <td>Deployed below cost. The standard new-signing pattern.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tmg-card-sub">Residual is expected versus actual time on ice given pay, normalized to cap share. Positive means deployed above what the contract implied.</p>
+      </div>
+
+      <div class="tmg-card-wide" id="context">
+        <p class="tmg-card-label">How this fits the prior work</p>
+        <p>The finding sits against three reference points, each from a different source.</p>
+        <p>The play-for-contract study found same-team re-signings deliver a positive time-on-ice residual and new-team signings a negative one. Returners arrive as new signings but land above ordinary re-signings on deployment.</p>
+        <p>The NFL Coach Continuity study found on-field coaching familiarity produced no measurable effect on retained production. This study asks the contractual-familiarity version of that question. The answer rhymes. Familiarity moves how a player is used more than what he produces.</p>
+        <p>The management literature on boomerang employees finds no rehire performance premium and flatter growth over time. Two domains, the same shape.</p>
+      </div>
+
+      <div class="tmg-card-wide" id="limits">
+        <p class="tmg-card-label">Scope and limits</p>
+        <p>This is a small-sample, descriptive study, and it is framed that way on purpose.</p>
+        <p>The sample is 15 free-agent returns from 2012 through 2025. The time-on-ice result rests on 11 of them. Two or three players could move it. Read it as direction, not proof.</p>
+        <p>Returns are detected from free-agent signings only. Trade-backs are excluded because the contract data source does not carry trades. The case that prompted this study, Connor Clifton's 2026 return to Boston, came partly through a trade and is not in the analyzed data.</p>
+        <p>The planned split by whether the general manager or head coach remained was not run. The return count is too small to support it. That decomposition is documented as a future extension if the sample grows.</p>
+      </div>
+
+      <div class="tmg-card-wide" id="method">
+        <p class="tmg-card-label">Method</p>
+        <p>The study compares returning players against all other new-team signings. A return is a free-agent signing with a team the player left in a prior season and returned to after playing elsewhere.</p>
+        <p>The outcomes are two. Time on ice residual measures deployment: expected versus actual minutes given pay. Points change measures production before and after the signing. The time-on-ice machinery is reused from the play-for-contract study in this suite.</p>
+        <p>Player stint history is visible from the 2009-2010 season onward. A small number of returns whose first stint began before then may be truncated.</p>
+      </div>
+
+    </div>
+
+    <footer class="tmg-footer">
+      <p>The Mallory Group. Part of the talent reunion series. NFL first, NHL second.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('tmgToolsBtn');
+      var dropdown = document.getElementById('tmgToolsDropdown');
+      if (btn && dropdown) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', function () {
+          dropdown.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
 </html>
