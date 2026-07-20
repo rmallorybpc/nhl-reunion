@@ -1,4 +1,5 @@
-# nhl-reunion
+# NHL Reunion
+
 A player-level study of whether NHL players who return to a former organization deliver more than other new-team signings.
 
 ## The question
@@ -25,8 +26,8 @@ The time-on-ice result is a signal, not a settled result. It rests on 11 players
 
 The finding sits against three reference points.
 
-- The play-for-contract study in this portfolio found same-team re-signings deliver a positive time-on-ice residual (+0.32) and new-team signings a negative one (−0.45). Returners arrive as new signings but land above ordinary re-signings on deployment.
-- The NFL Coach Continuity study found on-field coaching familiarity produced no measurable effect on retained production. This study asks the contractual-familiarity version of that question.
+- The [NHL Play for Contract](https://rmallorybpc.github.io/nhl-play-for-contract/) study found same-team re-signings deliver a positive time-on-ice residual (+0.32) and new-team signings a negative one (-0.45). Returners arrive as new signings but land above ordinary re-signings on deployment.
+- The [NFL Coach Continuity](https://rmallorybpc.github.io/nfl-coach-continuity/) study found on-field coaching familiarity produced no measurable effect on retained production. This study asks the contractual-familiarity version of that question.
 - The management literature on boomerang employees finds no rehire performance premium and flatter growth over time. Two domains, the same shape.
 
 ## Scope and limits
@@ -36,16 +37,24 @@ The finding sits against three reference points.
 - The detection window runs from 2012 through 2025. Player stint history is visible from 2009-2010 onward, so a small number of returns whose first stint began before 2009 may be truncated.
 - The planned decomposition by whether the general manager or head coach remained was not run. The return count is too small to support it. That decomposition is documented as a future extension if the sample grows.
 
-## Data sources
+## Data and sources
 
-- Contract and signing data: a community-hosted NHL contracts dataset, accessed through the play-for-contract pipeline in this portfolio.
-- Player performance and time on ice: the NHL API via the nhlscraper package.
-- The time-on-ice residual machinery is reused from the play-for-contract study.
+This study reuses the data pipeline from the [NHL Play for Contract](https://rmallorybpc.github.io/nhl-play-for-contract/) study. It does not collect new data. The sources below are the ones this study depends on.
 
-## Part of a series
+- Contracts and signings: community-hosted NHL contract data, [Chief-Zach Sports-Data (salaries)](https://raw.githubusercontent.com/Chief-Zach/Sports-Data/master/NHL/data/salaries/all_players.jsonl).
+- Player performance and time on ice: [Chief-Zach Sports-Data (skaters)](https://raw.githubusercontent.com/Chief-Zach/Sports-Data/master/NHL/data/stats/skaters/all_skaters.csv), with the NHL API via the nhlscraper R package used in the source pipeline.
+- Time-on-ice residual machinery: reused from the play for contract study, not rebuilt here.
 
-This is the second entry after the NFL Coach Continuity study. Each league is analyzed on its own. Results are never pooled across leagues. The order is NFL, then NHL, with other leagues possible later.
+The contract window spans 2012 through 2025. Player stint history is visible from the 2009-2010 season onward.
+
+## Related studies
+
+This is the second entry in the talent reunion series. The studies are analyzed standalone and never pooled.
+
+- [NFL Coach Continuity](https://rmallorybpc.github.io/nfl-coach-continuity/): the first entry. On-field coaching familiarity produced no measurable effect on retained production. This NHL study asks the contractual-familiarity version of that question.
+- [NHL Play for Contract](https://rmallorybpc.github.io/nhl-play-for-contract/): the source of the time-on-ice residual method and the same-team and new-team baselines this study compares against.
+- [Talent Portability Research](https://rmallorybpc.github.io/talent-portability-research/): the broader portfolio frame on whether performance moves with a player.
 
 ## Live site
 
-The findings page is published from the docs folder in this repository.
+The findings pages are published from the docs folder in this repository: Overview, Key findings, Methods, and Audit.
