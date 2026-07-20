@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit — The Organization Reunion (NHL) — The Mallory Group</title>
+  <link rel="stylesheet" href="tmg.css">
+</head>
+<body>
+
+  <!-- Swap this nav block for the exact nav from nhl-play-for-contract before publishing. -->
+  <nav class="tmg-nav">
+    <div class="tmg-nav-main">
+      <a class="tmg-nav-brand" href="https://rmallorybpc.github.io/">The Mallory Group</a>
+      <div class="tmg-nav-links">
+        <a href="index.html">Overview</a>
+        <a href="findings.html">Key findings</a>
+        <a href="methods.html">Methods</a>
+        <a href="audit.html" aria-current="page">Audit</a>
+      </div>
+    </div>
+    <div class="tmg-nav-tools">
+      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite &#9662;</button>
+      <div class="tmg-nav-dropdown" id="tmgToolsDropdown">
+        <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html">NHL Free Agency Research</a>
+        <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI">NFL Analysis</a>
+        <a href="https://rmallorybpc.github.io/nba-research-project/">NBA Supermax Research</a>
+        <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">NHL Play for Contract</a>
+        <a href="https://rmallorybpc.github.io/talent-portability-research/">Talent Portability Research</a>
+        <a href="https://rmallorybpc.github.io/external-hire-premium/">External Hire Premium</a>
+        <a href="https://rmallorybpc.github.io/nfl-coach-continuity/">NFL Coach Continuity</a>
+        <a href="https://rmallorybpc.github.io/recipes/">Recipe Book</a>
+        <a href="https://rmallorybpc.github.io/pdf-multi-agent-analysis/">PDF Multi-Agent Analysis</a>
+        <a href="https://content-integrity-audit.pages.dev/">Content Integrity</a>
+        <a href="https://rmallorybpc.github.io/housing-market-intel/">Housing Market Intel</a>
+        <a href="https://rmallorybpc.github.io/real-estate-report/">Real Estate Report</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tmg-page tmg-container">
+
+    <p class="tmg-eyebrow">How this study was stress-tested</p>
+    <h1 class="tmg-page-title">Audit</h1>
+    <p class="tmg-page-desc">The strongest challenges to this study, and the response to each. The study was gated at several points and nearly stopped twice.</p>
+
+    <div class="tmg-bento-grid">
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">The short version</p>
+        <p>This study almost did not ship. The original design was a four-cell decomposition. The sample could not support it. The design was cut back to a single pooled comparison, and even that rests on 15 returns. What survived is a directional finding on deployment and a flat result on production. Both are reported with their limits in the lead, not the footnotes.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Challenge one</p>
+        <h2 class="tmg-card-title">The sample is too small to trust.</h2>
+        <p>This is the correct first objection. The time-on-ice result rests on 11 returns with a measurable residual. The production result rests on 9. At that size, two or three players can move an estimate.</p>
+        <p>The response is not to defend the number. It is to frame it plainly. The time-on-ice gap is reported as a signal, p = 0.02, not as a settled effect. The production result is marked descriptive only. The study leads with its sample size on every page. A reader who wants proof should wait for a larger sample. A reader who wants direction can use this.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Challenge two</p>
+        <h2 class="tmg-card-title">Time on ice is chosen by the team, so it cannot measure whether returners are better.</h2>
+        <p>This is the central methodological point, and it is right. Time on ice is a deployment decision. A returning player may get more minutes because he is the known, trusted quantity, not because he produces more. A time-on-ice effect alone cannot separate "returners deliver more" from "coaches over-deploy returners."</p>
+        <p>The study was built around this objection rather than against it. Production was added as a co-primary outcome for exactly this reason. The result is the finding: returners get re-signing-grade minutes and new-signing-grade production. The gap between deployment and production is not a flaw in the study. It is what the study found. Familiarity moves how a player is used more than what he delivers.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Challenge three</p>
+        <h2 class="tmg-card-title">The study misses trade-backs, so it is not really about returns.</h2>
+        <p>Partly true, and stated plainly on every page. Returns are detected from free-agent signings only. The contract data source does not carry trades, so a player traded back to a former team does not appear. The case that prompted the study, Connor Clifton's 2026 return to Boston, came partly through a trade and is not in the analyzed data.</p>
+        <p>The claim is scoped to match. This is a study of free-agent returns, not all returns. A trade-inclusive version would need a transactions dataset the current pipeline does not have. That is documented as future work, not hidden.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Challenge four</p>
+        <h2 class="tmg-card-title">The planned decomposition was dropped. Was the design changed to fit the result?</h2>
+        <p>The design was changed, but before the result was seen, not after. The original plan split returns by whether the general manager and head coach remained, a four-cell design. A cell count was run first, as a gate. It returned about 15 total returns. Four cells were not viable. The design collapsed to a single pooled comparison at that point, on sample-size grounds, with no outcome yet computed.</p>
+        <p>The order matters. The cut was a response to the count, not to the finding. The decomposition remains documented as an extension if the sample grows.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">Challenge five</p>
+        <h2 class="tmg-card-title">Two kinds of returns are pooled together.</h2>
+        <p>A fair point about a known simplification. A free-agent return means the player also chose to come back, for comfort, city, or family. That bundles the team's private information with the player's own preference for the organization. The study does not separate these, because splitting an already small sample would leave nothing to measure.</p>
+        <p>The claim is kept at the level the data supports. The study says familiarity is priced by the bench. It does not claim to isolate the source of that familiarity between the team's information and the player's preference. That separation waits for a larger sample.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">What would change the finding</p>
+        <p>A larger sample is the main thing. More returns, including trade-backs, would move the time-on-ice result from signal to something testable, and would give the production result enough rows to be inferential rather than descriptive. Until then, the reading is direction, not proof. The deployment gap is real in this sample. Whether it holds at scale is the open question.</p>
+      </div>
+
+    </div>
+
+    <footer class="tmg-footer">
+      <p>The Mallory Group. Part of the talent reunion series. NFL first, NHL second.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('tmgToolsBtn');
+      var dropdown = document.getElementById('tmgToolsDropdown');
+      if (btn && dropdown) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', function () {
+          dropdown.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
