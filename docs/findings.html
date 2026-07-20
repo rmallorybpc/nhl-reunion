@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key findings — The Organization Reunion (NHL) — The Mallory Group</title>
+  <link rel="stylesheet" href="tmg.css">
+</head>
+<body>
+
+  <!-- Swap this nav block for the exact nav from nhl-play-for-contract before publishing. -->
+  <nav class="tmg-nav">
+    <div class="tmg-nav-main">
+      <a class="tmg-nav-brand" href="https://rmallorybpc.github.io/">The Mallory Group</a>
+      <div class="tmg-nav-links">
+        <a href="index.html">Overview</a>
+        <a href="findings.html" aria-current="page">Key findings</a>
+        <a href="methods.html">Methods</a>
+        <a href="audit.html">Audit</a>
+      </div>
+    </div>
+    <div class="tmg-nav-tools">
+      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite &#9662;</button>
+      <div class="tmg-nav-dropdown" id="tmgToolsDropdown">
+        <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html">NHL Free Agency Research</a>
+        <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI">NFL Analysis</a>
+        <a href="https://rmallorybpc.github.io/nba-research-project/">NBA Supermax Research</a>
+        <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">NHL Play for Contract</a>
+        <a href="https://rmallorybpc.github.io/talent-portability-research/">Talent Portability Research</a>
+        <a href="https://rmallorybpc.github.io/external-hire-premium/">External Hire Premium</a>
+        <a href="https://rmallorybpc.github.io/nfl-coach-continuity/">NFL Coach Continuity</a>
+        <a href="https://rmallorybpc.github.io/recipes/">Recipe Book</a>
+        <a href="https://rmallorybpc.github.io/pdf-multi-agent-analysis/">PDF Multi-Agent Analysis</a>
+        <a href="https://content-integrity-audit.pages.dev/">Content Integrity</a>
+        <a href="https://rmallorybpc.github.io/housing-market-intel/">Housing Market Intel</a>
+        <a href="https://rmallorybpc.github.io/real-estate-report/">Real Estate Report</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="tmg-page tmg-container">
+
+    <p class="tmg-eyebrow">The numbers in full</p>
+    <h1 class="tmg-page-title">Key findings</h1>
+    <p class="tmg-page-desc">Returning players are deployed like known quantities and produce like new signings. Both outcomes are reported with their sample size.</p>
+
+    <div class="tmg-bento-grid">
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">The frame</p>
+        <p>The study compares returning players against all other new-team signings from 2012 through 2025. A return is a free-agent signing with a team the player left in an earlier season and came back to after playing elsewhere. The frame holds 15 returns against 842 other new-team signings.</p>
+        <p class="tmg-card-sub">Sources: return_events.csv and pooled_findings.md.</p>
+      </div>
+
+      <div class="tmg-card">
+        <p class="tmg-card-label">Time on ice, raw means</p>
+        <p class="tmg-card-value">+0.84 vs &#8722;0.48</p>
+        <p class="tmg-card-sub">Returners run a positive time-on-ice residual. Other new signings run negative. Measured in this study's frame, 11 returns with a residual against 581 other new signings.</p>
+      </div>
+
+      <div class="tmg-card">
+        <p class="tmg-card-label">Time on ice, tier-controlled</p>
+        <p class="tmg-card-value">+1.75 min</p>
+        <p class="tmg-card-sub">Return coefficient after adjusting for tier, position, and age. 95 percent interval 0.28 to 3.21. p = 0.02. A signal at this sample size, not a settled result.</p>
+      </div>
+
+      <div class="tmg-card">
+        <p class="tmg-card-label">Production, raw means</p>
+        <p class="tmg-card-value">+0.05 vs &#8722;0.01</p>
+        <p class="tmg-card-sub">Points-per-game change for returners against other new signings. 9 returns with a measurable value. Descriptive only.</p>
+      </div>
+
+      <div class="tmg-card">
+        <p class="tmg-card-label">Production, tier-controlled</p>
+        <p class="tmg-card-value">Not distinct</p>
+        <p class="tmg-card-sub">Return coefficient +0.08, interval crosses zero, p = 0.15. The production side does not separate returners from other new signings.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">The comparison in context</p>
+        <table class="tmg-table">
+          <thead>
+            <tr>
+              <th scope="col">Group</th>
+              <th scope="col">Time on ice residual (mean)</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Same-team re-signings</td>
+              <td>+0.32</td>
+              <td>Play for contract study, n = 1,115</td>
+            </tr>
+            <tr>
+              <td>Returners</td>
+              <td>+0.84</td>
+              <td>This study, 11 with a residual</td>
+            </tr>
+            <tr>
+              <td>Other new-team signings</td>
+              <td>&#8722;0.45</td>
+              <td>Play for contract study, n = 592</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tmg-card-sub">The same-team and other-new-team baselines are from the <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">play for contract study</a>. Returners arrive as new signings but are deployed above ordinary re-signings.</p>
+      </div>
+
+      <div class="tmg-card-wide">
+        <p class="tmg-card-label">What the two outcomes say together</p>
+        <p>Returners get re-signing-grade minutes and new-signing-grade production. Familiarity moves how a player is used. It does not move what he delivers. Priced by the bench, not earned on the ice.</p>
+        <p>The result is small-sample and is framed that way. The time-on-ice gap rests on 11 players. The production result rests on 9 and is descriptive only. Read the direction. Do not read proof. The full stress-test is on the <a href="audit.html">audit page</a>.</p>
+      </div>
+
+    </div>
+
+    <footer class="tmg-footer">
+      <p>The Mallory Group. Part of the talent reunion series. NFL first, NHL second.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('tmgToolsBtn');
+      var dropdown = document.getElementById('tmgToolsDropdown');
+      if (btn && dropdown) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', function () {
+          dropdown.classList.remove('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
