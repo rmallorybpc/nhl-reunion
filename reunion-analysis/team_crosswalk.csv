@@ -1,0 +1,36 @@
+source_code	canonical_team	mapping_note
+ANA	ANA	identity
+ARI	UTA	Arizona Coyotes franchise mapped to Utah
+ATL	WPG	Atlanta Thrashers franchise mapped to Winnipeg
+BOS	BOS	identity
+BUF	BUF	identity
+CAR	CAR	identity
+CBJ	CBJ	identity
+CGY	CGY	identity
+CHI	CHI	identity
+COL	COL	identity
+DAL	DAL	identity
+DET	DET	identity
+EDM	EDM	identity
+FLA	FLA	identity
+LAK	LAK	identity
+MIN	MIN	identity
+MTL	MTL	identity
+NJD	NJD	identity
+NSH	NSH	identity
+NYI	NYI	identity
+NYR	NYR	identity
+OTT	OTT	identity
+PHI	PHI	identity
+PHX	UTA	Phoenix Coyotes franchise mapped to Utah
+PIT	PIT	identity
+SEA	SEA	identity
+SJS	SJS	identity
+STL	STL	identity
+TBL	TBL	identity
+TOR	TOR	identity
+UTA	UTA	Utah franchise (includes former ARI/PHX continuity)
+VAN	VAN	identity
+VGK	VGK	identity
+WPG	WPG	Winnipeg Jets (includes former ATL franchise continuity)
+WSH	WSH	identity
