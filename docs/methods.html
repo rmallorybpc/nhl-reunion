@@ -4,36 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Methods — The Organization Reunion (NHL) — The Mallory Group</title>
+  <style>
+    :root {
+      --tmg-cream: #FDFCF0;
+      --tmg-charcoal: #2D3436;
+      --tmg-sage: #84A98C;
+      --tmg-sage-hover: #6B8F74;
+      --tmg-white: #FFFFFF;
+
+      --tmg-bg: var(--tmg-cream);
+      --tmg-text: var(--tmg-charcoal);
+      --tmg-accent: var(--tmg-sage);
+      --tmg-surface: var(--tmg-white);
+
+      --tmg-success: #2E8540;
+      --tmg-warning: #C47F00;
+      --tmg-error: #B00020;
+
+      --tmg-border: 1px solid rgba(45, 52, 54, 0.12);
+      --tmg-border-hover: 1px solid rgba(132, 169, 140, 0.50);
+
+      --tmg-bento-radius: 16px;
+      --tmg-nav-radius: 8px;
+      --tmg-btn-radius: 8px;
+
+      --tmg-gap: 24px;
+      --tmg-gap-sm: 12px;
+
+      --tmg-shadow-sm: 0 1px 3px rgba(45, 52, 54, 0.08);
+      --tmg-shadow-md: 0 2px 8px rgba(45, 52, 54, 0.10);
+    }
+  </style>
   <link rel="stylesheet" href="tmg.css">
+  <style>
+    .tmg-nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      column-gap: 16px;
+    }
+
+    .tmg-nav-left,
+    .tmg-nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .tmg-nav-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      min-width: 0;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+
+    .tmg-nav-center::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tmg-nav-center a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--tmg-charcoal);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding: 6px 0;
+    }
+
+    .tmg-nav-center a[aria-current="page"] {
+      border-bottom-color: var(--tmg-sage);
+    }
+
+    @media (max-width: 860px) {
+      .tmg-nav {
+        grid-template-columns: 1fr;
+        height: auto;
+        row-gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .tmg-nav-left,
+      .tmg-nav-right {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Swap this nav block for the exact nav from nhl-play-for-contract before publishing. -->
-  <nav class="tmg-nav">
-    <div class="tmg-nav-main">
-      <a class="tmg-nav-brand" href="https://rmallorybpc.github.io/">The Mallory Group</a>
-      <div class="tmg-nav-links">
+  <nav class="tmg-nav" role="banner">
+    <div class="tmg-nav-left">
+      <a class="tmg-logo" href="https://rmallorybpc.github.io/" aria-label="The Mallory Group">
+        <span>TM</span>
+        <div class="tmg-logo-divider" aria-hidden="true"></div>
+        <span>G</span>
+      </a>
+    </div>
+    <div class="tmg-nav-center" aria-label="Study pages">
         <a href="index.html">Overview</a>
         <a href="findings.html">Key findings</a>
         <a href="methods.html" aria-current="page">Methods</a>
         <a href="audit.html">Audit</a>
-      </div>
     </div>
-    <div class="tmg-nav-tools">
-      <button class="tmg-nav-tools-btn" id="tmgToolsBtn">TMG Tool Suite &#9662;</button>
-      <div class="tmg-nav-dropdown" id="tmgToolsDropdown">
-        <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html">NHL Free Agency Research</a>
-        <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI">NFL Analysis</a>
-        <a href="https://rmallorybpc.github.io/nba-research-project/">NBA Supermax Research</a>
-        <a href="https://rmallorybpc.github.io/nhl-play-for-contract/">NHL Play for Contract</a>
-        <a href="https://rmallorybpc.github.io/talent-portability-research/">Talent Portability Research</a>
-        <a href="https://rmallorybpc.github.io/external-hire-premium/">External Hire Premium</a>
-        <a href="https://rmallorybpc.github.io/nfl-coach-continuity/">NFL Coach Continuity</a>
-        <a href="https://rmallorybpc.github.io/recipes/">Recipe Book</a>
-        <a href="https://rmallorybpc.github.io/pdf-multi-agent-analysis/">PDF Multi-Agent Analysis</a>
-        <a href="https://content-integrity-audit.pages.dev/">Content Integrity</a>
-        <a href="https://rmallorybpc.github.io/housing-market-intel/">Housing Market Intel</a>
-        <a href="https://rmallorybpc.github.io/real-estate-report/">Real Estate Report</a>
+    <div class="tmg-nav-right">
+      <div class="tmg-dropdown-wrap">
+        <button class="tmg-dropdown-btn" id="tmgDdBtn" aria-haspopup="true" aria-expanded="false" aria-controls="tmgDdMenu">
+          TMG Tool Suite
+          <svg class="tmg-chevron" viewBox="0 0 12 12" fill="none" width="12" height="12" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="tmg-dropdown-menu" id="tmgDdMenu" role="menu">
+          <a href="https://rmallorybpc.github.io/nhl-free-agency-research/welcome.html" target="_blank" rel="noreferrer" role="menuitem">NHL Free Agency Research</a>
+          <a href="https://rmallorybpc.github.io/nflanalysis/dashboard/src/findings.html?season=2022&team_id=PHI" target="_blank" rel="noreferrer" role="menuitem">NFL Analysis</a>
+          <a href="https://rmallorybpc.github.io/nba-research-project/" target="_blank" rel="noreferrer" role="menuitem">NBA Supermax Research</a>
+          <a href="https://rmallorybpc.github.io/nhl-play-for-contract/" target="_blank" rel="noreferrer" role="menuitem">NHL Play for Contract</a>
+          <a href="https://rmallorybpc.github.io/talent-portability-research/" target="_blank" rel="noreferrer" role="menuitem">Talent Portability Research</a>
+          <a href="https://rmallorybpc.github.io/external-hire-premium/" target="_blank" rel="noreferrer" role="menuitem">External Hire Premium</a>
+          <a href="https://rmallorybpc.github.io/nfl-coach-continuity/" target="_blank" rel="noreferrer" role="menuitem">NFL Coach Continuity</a>
+          <a href="https://rmallorybpc.github.io/recipes/" target="_blank" rel="noreferrer" role="menuitem">Recipe Book</a>
+          <a href="https://rmallorybpc.github.io/pdf-multi-agent-analysis/" target="_blank" rel="noreferrer" role="menuitem">PDF Multi-Agent Analysis</a>
+          <a href="https://content-integrity-audit.pages.dev/" target="_blank" rel="noreferrer" role="menuitem">Content Integrity</a>
+          <a href="https://rmallorybpc.github.io/housing-market-intel/" target="_blank" rel="noreferrer" role="menuitem">Housing Market Intel</a>
+          <a href="https://rmallorybpc.github.io/real-estate-report/" target="_blank" rel="noreferrer" role="menuitem">Real Estate Report</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -103,17 +201,31 @@
 
   <script>
     (function () {
-      var btn = document.getElementById('tmgToolsBtn');
-      var dropdown = document.getElementById('tmgToolsDropdown');
-      if (btn && dropdown) {
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          dropdown.classList.toggle('open');
-        });
-        document.addEventListener('click', function () {
-          dropdown.classList.remove('open');
-        });
-      }
+      var btn = document.getElementById('tmgDdBtn');
+      var menu = document.getElementById('tmgDdMenu');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = menu.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', function () {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          menu.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.focus();
+        }
+      });
     })();
   </script>
 
