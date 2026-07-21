@@ -1,6 +1,6 @@
 # NHL Reunion
 
-Live site: https://rmallorybpc.github.io/nhl-reunion/
+Live site: https://rmallorybpc.github.io/nhl-reunion/index.html
 
 A player-level study of whether NHL players who return to a former organization deliver more than other new-team signings.
 
@@ -35,7 +35,7 @@ The finding sits against three reference points.
 ## Scope and limits
 
 - The sample is 15 returns. This is a small-sample, descriptive study. It is framed that way on purpose.
-- Returns are detected from free-agent signings only. Trade-backs are excluded because the contract data source does not carry trades. The trigger case for this study, Connor Clifton's 2026 return to Boston, came partly through a trade and is not in the analyzed data.
+- Returns are detected from free-agent signings only. Trade-backs are excluded because the contract data source does not carry trades. The trigger case for this study, Connor Clifton's 2026 free-agent return to Boston, is not in the analyzed data because the contract panel ends before the 2026 signing.
 - The detection window runs from 2012 through 2025. Player stint history is visible from 2009-2010 onward, so a small number of returns whose first stint began before 2009 may be truncated.
 - The planned decomposition by whether the general manager or head coach remained was not run. The return count is too small to support it. That decomposition is documented as a future extension if the sample grows.
 
